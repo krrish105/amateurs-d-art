@@ -13,20 +13,20 @@ function App() {
 			<div className="text-white">
 				<Navigation />
 				<Routes>
-					<Route exact path="/" element={<Homepage />}></Route>
+					<Route exact path="/amateurs-d-art/" element={<Homepage />}></Route>
 					<Route
 						exact
-						path="/page/:name"
+						path="/amateurs-d-art/page/:name"
 						element={<NavigationResult />}
 					></Route>
 					<Route
 						exact
-						path="/artist/:artistId"
+						path="/amateurs-d-art/artist/:artistId"
 						element={<ArtistPage />}
 					></Route>
 					<Route
 						exact
-						path="/artwork/:artworkId"
+						path="/amateurs-d-art/artwork/:artworkId"
 						element={<ArtworkPage />}
 					></Route>
 				</Routes>

@@ -5,7 +5,7 @@ export const ArtworkComponent = ({ id, image_id, title, artist_titles }) => {
 		<div className="border border-white min-h-[16rem]">
 			{id && (
 				<Link
-					to={"/artwork/" + id}
+					to={"/amateurs-d-art/artwork/" + id}
 					className="block relative cursor-pointer hover:scale-105 transition-transform duration-200 ease-in-out min-h-[16rem]"
 				>
 					{image_id ? (

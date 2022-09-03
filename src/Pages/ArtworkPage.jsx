@@ -49,7 +49,7 @@ export const ArtworkPage = () => {
 									return (
 										<Link
 											key={i}
-											to={"/artist/" + data.artist_ids[i]}
+											to={"/amateurs-d-art/artist/" + data.artist_ids[i]}
 											className="link-state"
 										>
 											{el}

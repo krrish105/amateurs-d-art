@@ -58,7 +58,7 @@ export const ArtistComponent = ({ agent_id, title }) => {
 		<div className="border border-white h-[24rem]">
 			{agent_id && (
 				<Link
-					to={"/artist/" + agent_id}
+					to={"/amateurs-d-art/artist/" + agent_id}
 					className="block relative cursor-pointer hover:scale-105 transition-transform duration-200 ease-in-out w-full h-full"
 				>
 					{agent_id && <GetImgAgent id={agent_id} />}

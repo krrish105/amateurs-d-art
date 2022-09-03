@@ -27,7 +27,7 @@ export const ArtistPage = () => {
 						<img src={imgUrl} alt="" className="w-ful h-full" />
 					)}
 					<Link
-						to={"/artwork/" + id}
+						to={"/amateurs-d-art/artwork/" + id}
 						className="absolute bottom-3 left-2 right-2 text-lg bg-black p-3"
 					>
 						<h3 className="max-w-sm text-ellipsis whitespace-nowrap overflow-hidden">

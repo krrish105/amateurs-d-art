@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import { useFetch } from "../useFetch";
-import { Pagination } from "@mui/material";
 import Stack from "@mui/material/Stack";
+import Pagination from "@mui/material/Pagination";
 import { useEffect, useState } from "react";
 import { ArtworkComponent } from "../components/ArtworkComponent";
 import { ArtistComponent } from "../components/ArtistComponent";
@@ -14,6 +14,7 @@ export const NavigationResult = () => {
 	);
 
 	const handlePageChange = (value) => {
+		console.log(value);
 		setPage(value);
 	};
 
@@ -61,11 +62,12 @@ export const NavigationResult = () => {
 						<Pagination
 							count={pagination.total_pages}
 							page={page}
+							defaultPage={1}
 							color="primary"
 							variant="outlined"
 							shape="rounded"
 							className="float-right w-fit absolute right-0"
-							onChange={handlePageChange}
+							onChange={(event, value) => handlePageChange(value)}
 							boundaryCount={2}
 						/>
 					</Stack>

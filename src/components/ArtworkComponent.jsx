@@ -23,7 +23,7 @@ export const ArtworkComponent = ({ id, image_id, title, artist_titles }) => {
 								{title}
 							</h3>
 						)}
-						{artist_titles?.length && (
+						{artist_titles?.length > 0 && (
 							<h4>
 								<span className="opacity-80">Artist: </span>
 								{artist_titles.map((el, i) => {

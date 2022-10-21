@@ -9,19 +9,19 @@ export const ArtworkPage = () => {
 	);
 
 	if (error) {
-		return <div className="pt-7 container">Error...</div>;
+		return <div className='pt-7 container'>Error...</div>;
 	} else if (loading) {
-		return <div className="pt-7 container">Loading...</div>;
+		return <div className='pt-7 container'>Loading...</div>;
 	} else {
 		const imgUrl = `https://www.artic.edu/iiif/2/${data.image_id}/full/843,/0/default.jpg`;
 		return (
-			<main className="pt-7 container pb-12">
-				<div className="grid gap-11 artwork-page-grid">
-					<div className="border pb-3 px-3">
-						<img src={imgUrl} alt="" className="max-h-[30rem] w-full" />
-						<h2 className="mt-6 text-2xl">{data.title}</h2>
+			<main className='pt-7 container pb-12'>
+				<div className='grid gap-11 artwork-page-grid'>
+					<div className='border pb-3 px-3'>
+						<img src={imgUrl} alt='' className='max-h-[30rem] w-full' />
+						<h2 className='mt-6 text-2xl'>{data.title}</h2>
 					</div>
-					<ul className="leading-loose text-lg artwork-artist-list">
+					<ul className='leading-loose text-lg artwork-artist-list'>
 						{data.place_of_origin && (
 							<li>
 								Place of Origin:<span> {data.place_of_origin}</span>
@@ -43,18 +43,10 @@ export const ArtworkPage = () => {
 							</li>
 						)}
 						{data.artist_titles.length ? (
-							<li className="flex flex-wrap">
+							<li className='flex flex-wrap'>
 								Artist(s):
 								{data.artist_titles.map((el, i) => {
-									return (
-										<Link
-											key={i}
-											to={"/amateurs-d-art/artist/" + data.artist_ids[i]}
-											className="link-state"
-										>
-											{el}
-										</Link>
-									);
+									return <span>{el}</span>;
 								})}
 							</li>
 						) : (

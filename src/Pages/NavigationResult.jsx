@@ -4,7 +4,6 @@ import Stack from "@mui/material/Stack";
 import Pagination from "@mui/material/Pagination";
 import { useEffect, useState } from "react";
 import { ArtworkComponent } from "../components/ArtworkComponent";
-import { ArtistComponent } from "../components/ArtistComponent";
 
 export const NavigationResult = () => {
 	const pageName = useParams();
@@ -14,7 +13,6 @@ export const NavigationResult = () => {
 	);
 
 	const handlePageChange = (value) => {
-		console.log(value);
 		setPage(value);
 	};
 
@@ -31,12 +29,6 @@ export const NavigationResult = () => {
 					/>
 				);
 			});
-		} else if (pageName.name === "web-artists") {
-			return data.map((el, i) => {
-				return (
-					<ArtistComponent key={i} agent_id={el.agent_id} title={el.title} />
-				);
-			});
 		}
 	};
 
@@ -45,28 +37,28 @@ export const NavigationResult = () => {
 	}, [pageName]);
 
 	if (error) {
-		return <div className="pt-7 container">Error...</div>;
+		return <div className='pt-7 container'>Error...</div>;
 	}
 	if (loading) {
-		return <div className="pt-7 container">Loading...</div>;
+		return <div className='pt-7 container'>Loading...</div>;
 	}
 	if (!loading) {
 		return (
-			<main className="pt-7 container">
-				<h2 className="text-3xl font-bold capitalize">{pageName.name}</h2>
-				<div className="masonry-grid-container">
+			<main className='pt-7 container'>
+				<h2 className='text-3xl font-bold capitalize'>{pageName.name}</h2>
+				<div className='masonry-grid-container'>
 					<GetComponent />
 				</div>
-				<div className="relative mt-10 mb-20">
+				<div className='relative mt-10 mb-20'>
 					<Stack spacing={1}>
 						<Pagination
 							count={pagination.total_pages}
 							page={page}
 							defaultPage={1}
-							color="primary"
-							variant="outlined"
-							shape="rounded"
-							className="float-right w-fit absolute right-0"
+							color='primary'
+							variant='outlined'
+							shape='rounded'
+							className='float-right w-fit absolute right-0'
 							onChange={(event, value) => handlePageChange(value)}
 							boundaryCount={2}
 						/>
